@@ -110,6 +110,7 @@ class KeycloakOpenIDConnection(ConnectionManager):
         self.client_id = client_id
         self.verify = verify
         self.client_secret_key = client_secret_key
+        self._custom_headers = custom_headers
         self.user_realm_name = user_realm_name
         self.timeout = timeout
 
@@ -293,6 +294,7 @@ class KeycloakOpenIDConnection(ConnectionManager):
             realm_name=token_realm_name,
             verify=self.verify,
             client_secret_key=self.client_secret_key,
+            custom_headers=self.custom_headers,
             timeout=self.timeout,
         )
 
